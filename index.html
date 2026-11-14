@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#101114" />
+  <meta name="description" content="Discover promising content niches and build a personalized video idea feed." />
+  <title>UNTAPPED — Niche Finder & Feed Builder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#home" aria-label="Untapped home"><span class="brand-mark">u<span>.</span></span><span class="brand-name">untapped<span class="brand-pro">studio</span></span></a>
+      <div class="workspace-label">WORKSPACE</div>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a class="nav-link active" href="#discover" data-view="discover"><span class="nav-icon">◉</span> Discover <span class="nav-count">NEW</span></a>
+        <a class="nav-link" href="#my-feed" data-view="my-feed"><span class="nav-icon">▤</span> My idea feed <span class="nav-badge" id="nav-feed-count">0</span></a>
+        <a class="nav-link" href="#saved" data-view="saved"><span class="nav-icon">♡</span> Saved niches</a>
+      </nav>
+      <div class="sidebar-divider"></div>
+      <div class="workspace-label">YOUR TOOLS</div>
+      <nav class="main-nav" aria-label="Tools">
+        <a class="nav-link" href="#generator" data-view="generator"><span class="nav-icon">✳</span> Idea generator</a>
+        <a class="nav-link" href="#collections" data-view="collections"><span class="nav-icon">▦</span> Collections</a>
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <div class="upgrade-card"><div class="upgrade-spark">✦</div><strong>Find your next big thing.</strong><p>Fresh niche opportunities are waiting to be explored.</p><button class="upgrade-button" id="surprise-button">Surprise me <span>↗</span></button></div>
+      <div class="profile"><div class="avatar">C</div><div class="profile-copy"><strong>Creator workspace</strong><span>Free plan</span></div><button class="dots" aria-label="Workspace options">···</button></div>
+    </aside>
+
+    <main class="main-content" id="home">
+      <header class="topbar"><button class="mobile-menu" id="mobile-menu" aria-label="Open menu">☰</button><div class="breadcrumb">Workspace <span>/</span> <strong id="breadcrumb-current">Discover</strong></div><div class="top-actions"><button class="icon-button" title="Help" aria-label="Help">?</button><button class="whats-new"><span class="status-dot"></span> What’s new</button><div class="top-avatar">C</div></div></header>
+      <div class="page-wrap">
+        <section class="hero" id="discover-view">
+          <div class="hero-copy"><div class="eyebrow"><span class="eyebrow-dot"></span> YOUR CREATOR INTELLIGENCE TOOLKIT</div><h1>Find your next<br /><span>untapped niche.</span></h1><p>Spot rising ideas before they get crowded. Explore opportunities, then turn the ones you love into a personalized feed of video ideas.</p><div class="hero-actions"><button class="primary-button" id="explore-button">Explore niches <span>↓</span></button><div class="creator-proof"><div class="proof-avatars"><i>J</i><i>M</i><i>A</i></div><span>Made for curious creators</span></div></div></div>
+          <div class="hero-art" aria-hidden="true"><div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div><div class="art-core"><span>✳</span></div><div class="float-chip chip-top"><span class="chip-icon">↗</span><span><b>Opportunity found</b><small>Low competition · rising interest</small></span></div><div class="float-chip chip-bottom"><span class="mini-chart">▂▃▅▆▇</span><span><b>Momentum</b><small>Growing this week</small></span></div><div class="art-star star-one">✦</div><div class="art-star star-two">✧</div></div>
+        </section>
+
+        <section class="quick-stats" aria-label="Discovery summary"><div class="stat-item"><div class="stat-icon violet">✳</div><div><span>Ideas to explore</span><strong id="stat-niches">24 <small>niches</small></strong></div></div><div class="stat-item"><div class="stat-icon green">↗</div><div><span>Fresh opportunities</span><strong>08 <small>this week</small></strong></div></div><div class="stat-item"><div class="stat-icon amber">▤</div><div><span>Your idea feed</span><strong id="stat-ideas">00 <small>ideas saved</small></strong></div></div><div class="stat-asof"><span class="live-dot"></span> Updated today</div></section>
+
+        <section class="discovery-section" id="niche-explorer">
+          <div class="section-heading"><div><div class="section-kicker">THE NICHE RADAR</div><h2>Explore opportunities</h2><p>Find a corner of the internet that feels like yours.</p></div><button class="text-button" id="refresh-button">↻ <span>Refresh ideas</span></button></div>
+          <div class="filters"><label class="search-box"><span>⌕</span><input id="search-input" type="search" placeholder="Search niches, topics, or keywords..." /><kbd>/</kbd></label><div class="filter-select-wrap"><select id="category-filter" aria-label="Filter by category"><option value="all">All categories</option><option>Education</option><option>Lifestyle</option><option>Technology</option><option>Food</option><option>Finance</option><option>Wellness</option><option>Travel</option><option>Entertainment</option></select><span class="select-arrow">⌄</span></div><div class="filter-select-wrap"><select id="platform-filter" aria-label="Filter by platform"><option value="all">Any platform</option><option>YouTube</option><option>TikTok</option><option>Instagram</option></select><span class="select-arrow">⌄</span></div><button class="filter-button" id="sort-button">↕ <span>Best opportunity</span></button></div>
+          <div class="results-label"><span id="result-count">24 opportunities</span><span class="results-note"><span class="live-dot"></span> Signals are directional, not guarantees</span></div>
+          <div class="niche-grid" id="niche-grid" aria-live="polite"></div>
+          <div class="empty-state hidden" id="empty-state"><div>⌕</div><h3>No matching niches yet</h3><p>Try a different search or category.</p><button class="text-button" id="clear-filters">Clear filters</button></div>
+          <div class="load-more-wrap"><button class="load-more" id="load-more">Show more niches <span>↓</span></button></div>
+        </section>
+
+        <section class="bottom-callout"><div class="callout-icon">✦</div><div><strong>Found something interesting?</strong><p>Add niches to your feed and get a stream of tailored video prompts.</p></div><button class="secondary-button" id="view-feed-button">Build my idea feed <span>→</span></button></section>
+        <footer><span>© 2025 Untapped Studio</span><span>Made for creators who think differently <b>✳</b></span><div><a href="#privacy">Privacy</a><a href="#help">Help center</a></div></footer>
+      </div>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <dialog class="idea-modal" id="idea-modal"><div class="modal-head"><div><span class="section-kicker">YOUR NEXT VIDEO</span><h2 id="modal-title">Idea details</h2></div><button class="modal-close" id="modal-close" aria-label="Close">×</button></div><div class="modal-body" id="modal-body"></div><div class="modal-actions"><button class="secondary-button" id="copy-idea">Copy idea</button><button class="primary-button" id="add-idea">Add to my feed <span>+</span></button></div></dialog>
+  <script src="app.js"></script>
+</body>
+</html>
